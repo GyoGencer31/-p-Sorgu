@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gencer Academy</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+  <script>
+    function sorgula() {
+      var ipAdresi = document.getElementById('ipAdresi').value;
+
+      fetch(`https://ipapi.co/${ipAdresi}/json/`)
+        .then(response => response.json())
+        .then(data => {
+          document.getElementById('sonuc').innerHTML = JSON.stringify(data, null, 2);
+        })
+        .catch(error => console.error('IP sorgusu yapılamadı', error));
+    }
+  </script>
+</head>
+<body>
+  
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <h1>İp Sorgu Gencer Academy >
+  
+  <label for="ipAdresi">IP Adresi:</label>
+  <input type="text" id="ipAdresi" placeholder="Örn: 8.8.8.8">
+  
+  <button onclick="sorgula()">Sorgula</button>
+  
+  <pre id="sonuc"></pre>
+  <div class="card text-bg-dark">
+    <img src="babaringo.png" class="card-img" alt="...">
+    <div class="card-img-overlay">
+      <h5 class="card-title">Bizimle İletişime Geç</h5>
+      <div class="btn-group">
+        <a href="https://www.instagram.com/gyo_offlinee?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="btn btn-primary active" aria-current="page">İnstagram</a>
+        <a href="https://discord.gg/MAhz8B57tu" class="btn btn-primary">Discord</a>
+        <a href="https://discord.gg/44SzWyJrK6" class="btn btn-primary">discord 2</a>
+      </div>
+      <p class="card-text"><small>Daha fazlasi için Discord'a gelin</small></p>
+    </div>
+  </div>
+</body>
+</html>
